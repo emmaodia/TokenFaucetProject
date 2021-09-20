@@ -89,5 +89,5 @@ const Transfer = async () => {
 }
 
 
-document.getElementById('connectMetamask').onclick = Connect();
+document.getElementById('connectMetamask').onclick = Connect;
 document.getElementById('transferTokens').onclick = Transfer;

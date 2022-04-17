@@ -57,7 +57,7 @@ const Transfer = async () => {
         const signer = provider.getSigner();
         const add = await signer.getAddress();
         console.log(add)
-        const faucet = "0xF0c776422D6C09e8094902353A293ECbe9C54fdD"
+        const faucet = "0xB0FA61D03bC3b5630D5CC5c76D6dF32076282cbE"
 
         const send_account = (add == address) ? faucet : add;
         console.log(send_account)

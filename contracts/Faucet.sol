@@ -35,8 +35,14 @@ contract Faucet {
             "You can only request for 100 Bread Tokens from the Faucet"
         );
         require(recipient == msg.sender, "You can not mint for another EOA");
-        require(delayFaucet(recipient), "Wait for 24 hours");
 
+        delayFaucet(recipient);
+        require(
+            block.timestamp > lockTime[msg.sender],
+            "Please try after 24 hours"
+        );
+
+        lockTime[msg.sender] = block.timestamp + 1 days;
         bread.transfer(msg.sender, _amount);
 
         emit Transfer(address(this), msg.sender, _amount);

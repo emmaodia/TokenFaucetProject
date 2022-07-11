@@ -17,7 +17,6 @@ contract BreadToken is ERC20, Ownable {
         public
         virtual
         override
-        onlyOwner
         returns (bool)
     {
         _transfer(_msgSender(), recipient, amount);
